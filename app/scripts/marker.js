@@ -8,7 +8,7 @@ define([
 
   Lateralus
 
-  ,MarkerContainer
+  ,ContainerComponent
 
 ) {
   'use strict';
@@ -20,7 +20,7 @@ define([
   var Marker = Lateralus.beget(function () {
     Lateralus.apply(this, arguments);
 
-    this.addComponent(MarkerContainer, { el: this.el });
+    this.addComponent(ContainerComponent, { el: this.el });
   });
 
   return Marker;

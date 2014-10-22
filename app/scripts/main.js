@@ -15,6 +15,7 @@ require.config({
     ,backbone: 'bower_components/backbone/backbone'
     ,underscore: 'bower_components/lodash/dist/lodash'
     ,mustache: 'bower_components/mustache/mustache'
+    ,marked: 'bower_components/marked/lib/marked'
   }
   ,packages: [{
     name: 'lateralus'
@@ -27,6 +28,12 @@ require.config({
   }, {
     name: 'marker.component.container'
     ,location: 'scripts/components/container'
+  }, {
+    name: 'marker.component.buffer'
+    ,location: 'scripts/components/buffer'
+  }, {
+    name: 'marker.component.rendered-output'
+    ,location: 'scripts/components/rendered-output'
   }]
 });
 
