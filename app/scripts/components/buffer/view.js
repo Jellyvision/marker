@@ -2,7 +2,6 @@ define([
 
   'lateralus'
   ,'underscore'
-  ,'marked'
 
   ,'text!./template.mustache'
 
@@ -10,7 +9,6 @@ define([
 
   Lateralus
   ,_
-  ,marked
 
   ,template
 
@@ -29,6 +27,9 @@ define([
      */
     ,initialize: function () {
       this._super('initialize', arguments);
+
+      // Wait for initialization to complete and cause a first-time render to
+      // occur
       _.defer(this.updateMarkdown.bind(this));
     }
 
@@ -37,8 +38,7 @@ define([
     }, 100)
 
     ,updateMarkdown: function () {
-      var markdown = marked(this.$input.val());
-      this.emit('change:markdown', markdown);
+      this.emit('change:markdown', this.$input.val());
     }
   });
 

@@ -1,12 +1,14 @@
 define([
 
   'lateralus'
+  ,'marked'
 
   ,'text!./template.mustache'
 
 ], function (
 
   Lateralus
+  ,marked
 
   ,template
 
@@ -33,7 +35,7 @@ define([
      * @param {string} markdown
      */
     ,onChangeMarkdown: function (markdown) {
-      this.$renderedMarkdown.html(markdown);
+      this.$renderedMarkdown.html(marked(markdown));
     }
   });
 
