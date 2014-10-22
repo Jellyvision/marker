@@ -21,11 +21,18 @@ define([
 ) {
   'use strict';
 
+  /**
+   * A suggested pattern for Lateralus apps is to have a single container
+   * component that contains all other UI components within the application.
+   * This component should be concerned with top-level presentation logic.
+   */
   var ContainerComponent = Lateralus.Component.extend({
     name: 'container'
     ,View: View
     ,template: template
 
+    // The container component's primary responsibility is to initialize other
+    // subcomponents.
     ,initialize: function () {
       this.bufferComponent = this.addComponent(BufferComponent, {
         el: this.view.$buffer[0]

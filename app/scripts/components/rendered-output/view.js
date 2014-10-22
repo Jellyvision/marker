@@ -19,6 +19,8 @@ define([
     template: template
 
     /**
+     * This component view listens for change:markdown events and renders that
+     * Markdown as HTML.
      * @param {Object} opts
      */
     ,initialize: function () {
