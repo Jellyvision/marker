@@ -2,9 +2,12 @@ define([
 
   'lateralus'
   ,'underscore'
-  ,'codemirror'
+  ,'bower_components/codemirror/lib/codemirror'
 
   ,'text!./template.mustache'
+
+  // Markdown mode files do not return anything
+  ,'bower_components/codemirror/mode/markdown/markdown'
 
 ], function (
 
@@ -28,6 +31,7 @@ define([
 
       this.codeMirror = CodeMirror.fromTextArea(this.$input[0], {
         lineNumbers: true
+        ,mode: 'markdown'
       });
 
       this.codeMirror.on('inputRead', this.onCodeMirrorInputRead.bind(this));
