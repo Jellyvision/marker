@@ -2,6 +2,7 @@ define([
 
   'lateralus'
   ,'underscore'
+  ,'codemirror'
 
   ,'text!./template.mustache'
 
@@ -9,6 +10,7 @@ define([
 
   Lateralus
   ,_
+  ,CodeMirror
 
   ,template
 
@@ -18,22 +20,24 @@ define([
   var BufferComponentView = Lateralus.Component.View.extend({
     template: template
 
-    ,events: {
-      'keyup .input': 'onKeyupInput'
-    }
-
     /**
      * @param {Object} opts
      */
     ,initialize: function () {
       this._super('initialize', arguments);
 
+      this.codeMirror = CodeMirror.fromTextArea(this.$input[0], {
+        lineNumbers: true
+      });
+
+      this.codeMirror.on('inputRead', this.onCodeMirrorInputRead.bind(this));
+
       // Wait for app initialization to complete and cause a first-time
       // Markdown render to occur.
       _.defer(this.updateMarkdown.bind(this));
     }
 
-    ,onKeyupInput: _.debounce(function () {
+    ,onCodeMirrorInputRead: _.debounce(function () {
       this.updateMarkdown();
     }, 100)
 
@@ -45,7 +49,7 @@ define([
       // .emit triggers an event on the Object that called it and the central
       // Lateralus subclass instance.  If the calling object is a View, the
       // event is also triggered on the Component to which is belongs.
-      this.emit('change:markdown', this.$input.val());
+      this.emit('change:markdown', this.codeMirror.getValue());
     }
   });
 

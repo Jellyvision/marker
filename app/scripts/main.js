@@ -1,4 +1,5 @@
 /*global require*/
+/* jshint maxlen:100 */
 /**
  * This file is used for configuring RequireJS and initiating the boot process.
  */
@@ -31,6 +32,10 @@ require.config({
     name: 'marker'
     ,location: 'scripts'
     ,main: 'marker'
+  }, {
+    name: 'codemirror'
+    ,location: 'bower_components/codemirror/lib'
+    ,main: 'codemirror'
   }, {
     // It is recommended that you load your components as AMD packages to make
     // them easier to reuse in other applications.

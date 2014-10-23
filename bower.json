@@ -10,7 +10,8 @@
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1",
     "lateralus": "ssh://git@stash.jellyvision.com:7999/frame/lateralus.git",
-    "marked": "~0.3.2"
+    "marked": "~0.3.2",
+    "codemirror": "~4.7.0"
   },
   "devDependencies": {},
   "resolutions": {
