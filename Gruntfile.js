@@ -121,14 +121,8 @@ module.exports = function (grunt) {
       dist: {
         // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
         options: {
-          baseUrl: '<%= yeoman.app %>/scripts',
+          baseUrl: '<%= yeoman.app %>',
           optimize: 'none',
-          paths: {
-            'templates': '../../.tmp/scripts/templates',
-            'jquery': '../../<%= yeoman.app %>/bower_components/jquery/dist/jquery',
-            'underscore': '../../<%= yeoman.app %>/bower_components/lodash/dist/lodash',
-            'backbone': '../../<%= yeoman.app %>/bower_components/backbone/backbone'
-          },
           // TODO: Figure out how to make sourcemaps work with grunt-usemin
           // https://github.com/yeoman/grunt-usemin/issues/30
           //generateSourceMaps: true,
@@ -136,7 +130,9 @@ module.exports = function (grunt) {
           // http://requirejs.org/docs/errors.html#sourcemapcomments
           preserveLicenseComments: false,
           useStrict: true,
-          wrap: true
+          wrap: true,
+          mainConfigFile: 'app/scripts/main.js',
+          name: 'scripts/main'
           //uglify2: {} // https://github.com/mishoo/UglifyJS2
         }
       }
