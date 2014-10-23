@@ -211,19 +211,6 @@ module.exports = function (grunt) {
       all: {
         rjsConfig: '<%= yeoman.app %>/scripts/main.js'
       }
-    },
-    rev: {
-      dist: {
-        files: {
-          src: [
-            '<%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-            '/styles/fonts/{,*/}*.*',
-            'bower_components/sass-bootstrap/fonts/*.*'
-          ]
-        }
-      }
     }
   });
 
@@ -257,7 +244,6 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'copy',
-    'rev',
     'usemin'
   ]);
 
