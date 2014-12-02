@@ -35,12 +35,12 @@ define([
     // subcomponents.
     ,initialize: function () {
       this.bufferComponent = this.addComponent(BufferComponent, {
-        el: this.view.$buffer[0]
+        el: this.view.$buffer
       });
 
       this.renderedOutputComponent = this.addComponent(
           RenderedOutputComponent, {
-        el: this.view.$renderedOutput[0]
+        el: this.view.$renderedOutput
       });
     }
   });

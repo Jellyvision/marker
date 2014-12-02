@@ -34,14 +34,14 @@ define([
         ,mode: 'markdown'
       });
 
-      this.codeMirror.on('inputRead', this.onCodeMirrorInputRead.bind(this));
+      this.codeMirror.on('changes', this.onCodeMirrorChanges.bind(this));
 
       // Wait for app initialization to complete and cause a first-time
       // Markdown render to occur.
       _.defer(this.updateMarkdown.bind(this));
     }
 
-    ,onCodeMirrorInputRead: _.debounce(function () {
+    ,onCodeMirrorChanges: _.throttle(function () {
       this.updateMarkdown();
     }, 100)
 
@@ -52,7 +52,7 @@ define([
       //
       // .emit triggers an event on the Object that called it and the central
       // Lateralus subclass instance.  If the calling object is a View, the
-      // event is also triggered on the Component to which is belongs.
+      // event is also triggered on the Component to which it belongs.
       this.emit('change:markdown', this.codeMirror.getValue());
     }
   });

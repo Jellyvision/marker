@@ -26,11 +26,7 @@ define([
     ,initialize: function () {
       this._super('initialize', arguments);
 
-      this.listenTo(
-        this.lateralus
-        ,'change:markdown'
-        ,this.onChangeMarkdown.bind(this)
-       );
+      this.listenFor('change:markdown', this.onChangeMarkdown.bind(this));
     }
 
     /**
