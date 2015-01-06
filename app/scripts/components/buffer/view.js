@@ -34,6 +34,7 @@ define([
 
       this.codeMirror = CodeMirror.fromTextArea(this.$input[0], {
         lineNumbers: true
+        ,lineWrapping: true
         ,mode: 'markdown'
       });
 
