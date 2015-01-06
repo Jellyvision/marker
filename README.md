@@ -1,6 +1,6 @@
 # Marker
 
-This is an educational project that demonstrates how to build a practical application with the Lateralus JavaScript framework and the Spread CSS grid system.
+This is an educational project that demonstrates how to build a practical application with the [Lateralus](https://github.com/Jellyvision/lateralus) JavaScript framework and the [Spread](https://github.com/Jellyvision/spread) CSS grid system.
 
 The application itself is deliberately simple and light on features; the focus is to show how Lateralus components are built and used.  The best way to understand how Marker works is to follow along the code (there are plenty of comments to explain things).  You may want to take a look at `app/main.js` first and follow the code along from there.
 
