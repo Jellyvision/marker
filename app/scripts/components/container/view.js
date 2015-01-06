@@ -13,6 +13,9 @@ define([
 ) {
   'use strict';
 
+  var Base = Lateralus.Component.View;
+  var baseProto = Base.prototype;
+
   var ContainerComponentView = Lateralus.Component.View.extend({
     template: template
 
@@ -20,7 +23,7 @@ define([
      * @param {Object} opts
      */
     ,initialize: function () {
-      this._super('initialize', arguments);
+      baseProto.initialize.apply(this, arguments);
     }
   });
 

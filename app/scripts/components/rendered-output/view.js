@@ -15,6 +15,9 @@ define([
 ) {
   'use strict';
 
+  var Base = Lateralus.Component.View;
+  var baseProto = Base.prototype;
+
   var RenderedOutputComponentView = Lateralus.Component.View.extend({
     template: template
 
@@ -24,7 +27,7 @@ define([
      * @param {Object} opts
      */
     ,initialize: function () {
-      this._super('initialize', arguments);
+      baseProto.initialize.apply(this, arguments);
 
       this.listenFor('change:markdown', this.onChangeMarkdown.bind(this));
     }

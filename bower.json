@@ -9,7 +9,7 @@
     "requirejs": "~2.1.10",
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1",
-    "lateralus": "~0.0.5",
+    "lateralus": "~0.1.0",
     "marked": "~0.3.2",
     "codemirror": "~4.7.0"
   },

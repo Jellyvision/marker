@@ -20,14 +20,17 @@ define([
 ) {
   'use strict';
 
-  var BufferComponentView = Lateralus.Component.View.extend({
+  var Base = Lateralus.Component.View;
+  var baseProto = Base.prototype;
+
+  var BufferComponentView = Base.extend({
     template: template
 
     /**
      * @param {Object} opts
      */
     ,initialize: function () {
-      this._super('initialize', arguments);
+      baseProto.initialize.apply(this, arguments);
 
       this.codeMirror = CodeMirror.fromTextArea(this.$input[0], {
         lineNumbers: true
