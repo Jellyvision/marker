@@ -39,10 +39,12 @@ define([
       });
 
       this.codeMirror.on('changes', this.onCodeMirrorChanges.bind(this));
+    }
 
-      // Wait for app initialization to complete and cause a first-time
-      // Markdown render to occur.
-      _.defer(this.updateMarkdown.bind(this));
+    // Wait for app initialization to complete and cause a first-time Markdown
+    // render to occur.
+    ,deferredInitialize: function () {
+      this.updateMarkdown();
     }
 
     ,onCodeMirrorChanges: _.throttle(function () {

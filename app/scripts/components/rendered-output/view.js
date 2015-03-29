@@ -21,6 +21,15 @@ define([
   var RenderedOutputComponentView = Lateralus.Component.View.extend({
     template: template
 
+    ,lateralusEvents: {
+      /**
+       * @param {string} markdown
+       */
+      'change:markdown': function (markdown) {
+        this.$renderedMarkdown.html(marked(markdown));
+      }
+    }
+
     /**
      * This component view listens for change:markdown events and renders that
      * Markdown as HTML.
@@ -28,15 +37,6 @@ define([
      */
     ,initialize: function () {
       baseProto.initialize.apply(this, arguments);
-
-      this.listenFor('change:markdown', this.onChangeMarkdown.bind(this));
-    }
-
-    /**
-     * @param {string} markdown
-     */
-    ,onChangeMarkdown: function (markdown) {
-      this.$renderedMarkdown.html(marked(markdown));
     }
   });
 
